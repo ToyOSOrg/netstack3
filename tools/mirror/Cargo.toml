@@ -1,0 +1,11 @@
+[package]
+name = "netstack3-mirror"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+sha1 = "0.10"
+toml = "0.8"

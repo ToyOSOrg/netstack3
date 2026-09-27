@@ -1,0 +1,13 @@
+# The byte-identity gate: every file under upstream/ is the blob upstream.toml
+# pins for it, and every crate of ours builds a pinned file. Offline; the one
+# step is the tool's own tests, which run `check`.
+name: identity
+on:
+  push:
+  pull_request:
+jobs:
+  identity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - run: cargo test --locked -p netstack3-mirror
